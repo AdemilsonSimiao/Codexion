@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 18:00:57 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 18:09:28 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ typedef struct s_dongle
 	int				data;
 	long			dongle_cooldown;
 }	t_dongle;
+
+typedef struct s_coder
+{
+	int			id;
+	pthread_t	thread;
+	int			compile_count;
+	long		compile_start;
+	t_dongle	*left_dongle;
+	t_dongle	*right_dongle;
+	t_config	*config;
+
+}	t_coder;
 
 int	negative_validacion(int validate);
 
