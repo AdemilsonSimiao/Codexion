@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 18:09:28 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 18:19:44 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ typedef struct s_coder
 	t_config	*config;
 
 }	t_coder;
+
+typedef struct s_data
+{
+	t_config		config;
+	t_dongle		*dongles;
+	t_coder			*coders;
+	pthread_t		monitor;
+	pthread_mutex_t	log_mutex;
+	pthread_mutex_t	stop_mutex;
+	int				stop;
+	long			start_time;
+
+}	t_data;
 
 int	negative_validacion(int validate);
 
