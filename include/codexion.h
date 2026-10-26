@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 18:19:44 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 19:14:07 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct s_data
 
 }	t_data;
 
-int	negative_validacion(int validate);
+int	negative_validation(int validate);
+int	ft_isdigit(char c);
+int	number_validation(char *str);
 
 #endif
