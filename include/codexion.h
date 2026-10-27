@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 22:00:48 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/27 08:29:22 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CODEXION_H
 # include <pthread.h>
 # include <string.h>
+# include <stdlib.h>
 
 typedef struct s_config
 {
@@ -32,7 +33,7 @@ typedef struct s_dongle
 {
 	pthread_mutex_t	mutex;
 	pthread_cond_t	cond;
-	int				data;
+	int				dongle_data;
 	long			dongle_cooldown;
 }	t_dongle;
 
@@ -61,10 +62,11 @@ typedef struct s_data
 
 }	t_data;
 
-int	negative_validation(int validate);
-int	ft_isdigit(char c);
-int	number_validation(char *str);
-int	fifo_edf_validation(char *str);
-int	args_validation(int argc, char **argv);
+int		negative_validation(int validate);
+int		ft_isdigit(char c);
+int		number_validation(char *str);
+int		fifo_edf_validation(char *str);
+int		args_validation(int argc, char **argv);
+void	fill_config(t_config *config, char **argv);
 
 #endif
