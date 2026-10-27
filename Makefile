@@ -1,4 +1,4 @@
-NAME = Codexion
+NAME = codexion
 CC = cc -Wall -Wextra -Werror -pthread
 SRCS =	src/main.c \
 		src/parsing/parse_args.c \
@@ -12,12 +12,14 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
 %.o: %.c
-	$(CC) -c $< -o $@
+	$(CC) -I include -c $< -o $@
 
 clean:
+	rm -f $(OBJS)
 
-fclean:
+fclean: clean
+	rm -f $(NAME)
 
-re:
+re: fclean
 
 .PHONY: all clean fclean re
