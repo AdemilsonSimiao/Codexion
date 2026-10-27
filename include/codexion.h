@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/27 08:29:22 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/27 08:45:48 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <pthread.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_config
 {
