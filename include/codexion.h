@@ -6,13 +6,14 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 19:14:07 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 22:00:48 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CODEXION_H
 # define CODEXION_H
 # include <pthread.h>
+# include <string.h>
 
 typedef struct s_config
 {
@@ -63,5 +64,7 @@ typedef struct s_data
 int	negative_validation(int validate);
 int	ft_isdigit(char c);
 int	number_validation(char *str);
+int	fifo_edf_validation(char *str);
+int	args_validation(int argc, char **argv);
 
 #endif

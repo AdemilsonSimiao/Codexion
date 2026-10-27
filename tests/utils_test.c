@@ -6,17 +6,16 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 20:38:04 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 20:41:46 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 21:31:50 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static void	assert_equal(char *input, int expected)
-{
-	int	result;
+#include "test.h"
 
-	result = number_validation(input);
+void	assert_equal(char *label, int result, int expected)
+{
 	if (result == expected)
-		printf("OK  \"%s\" -> %d\n", input, result);
+		printf("OK  \"%s\" -> %d\n", label, result);
 	else
-		printf("KO  \"%s\" -> %d (esperado %d)\n", input, result, expected);
+		printf("KO  \"%s\" -> %d (esperado %d)\n", label, result, expected);
 }

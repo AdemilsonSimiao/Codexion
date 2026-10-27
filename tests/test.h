@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 20:38:08 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 20:46:22 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/26 21:27:14 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 # include <stdio.h>
 # include "codexion.h"
 
-void	assert_equal(char *input, int expected);
+void	assert_equal(char *label, int result, int expected);
 
 #endif
