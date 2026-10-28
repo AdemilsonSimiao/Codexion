@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/27 15:46:04 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/28 08:12:26 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <sys/time.h>
+# include <unistd.h>
 
 typedef struct s_config
 {
@@ -77,5 +78,8 @@ int		fifo_edf_validation(char *str);
 int		args_validation(int argc, char **argv);
 void	fill_config(t_config *config, char **argv);
 long	get_time_ms(void);
+void	smart_sleep(long ms);
+void	log_state(t_data *data, int id, const char *msg);
+int		init_dongles(t_data *data);
 
 #endif
