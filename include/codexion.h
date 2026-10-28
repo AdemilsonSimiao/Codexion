@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 08:12:26 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/28 15:51:50 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,6 @@ typedef struct s_data
 
 }	t_data;
 
-typedef struct s_timeval
-{
-	
-}	t_timeval;
-
-
 int		negative_validation(int validate);
 int		ft_isdigit(char c);
 int		number_validation(char *str);
@@ -81,5 +75,8 @@ long	get_time_ms(void);
 void	smart_sleep(long ms);
 void	log_state(t_data *data, int id, const char *msg);
 int		init_dongles(t_data *data);
+int		init_coders(t_data *data);
+int		init_data(t_data *data, char **argv);
+void	destroy_dongles(t_dongle *dongles, int count);
 
 #endif

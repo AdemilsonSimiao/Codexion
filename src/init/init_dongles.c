@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 21:38:24 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 08:53:12 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/28 16:11:38 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	init_one_dongle(t_dongle *dongle)
 	return (1);
 }
 
-static void	destroy_dongles(t_dongle *dongles, int count)
+void	destroy_dongles(t_dongle *dongles, int count)
 {
 	while (count > 0)
 	{
