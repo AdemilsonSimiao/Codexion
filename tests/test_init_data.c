@@ -6,10 +6,13 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 10:30:55 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 10:31:00 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/28 16:38:28 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "test.h"
+
+#include <stdlib.h>
 #include "test.h"
 
 int	main(void)
@@ -18,14 +21,13 @@ int	main(void)
 	char	*argv[] = {"./codexion", "5", "800", "200", "200", "200", "3", "100", "fifo", NULL};
 
 	assert_equal("retorno", init_data(&data, argv), 1);
-	assert_equal("coders", data.config.number_of_coders, 5);
-	assert_equal("stop", data.stop, 0);
-	assert_equal("start_time", data.start_time > 0, 1);
-	assert_equal("lock log", pthread_mutex_lock(&data.log_mutex), 0);
-	pthread_mutex_unlock(&data.log_mutex);
-	assert_equal("lock stop", pthread_mutex_lock(&data.stop_mutex), 0);
-	pthread_mutex_unlock(&data.stop_mutex);
-	pthread_mutex_destroy(&data.log_mutex);
-	pthread_mutex_destroy(&data.stop_mutex);
+	assert_equal("dongles", data.dongles != NULL, 1);
+	assert_equal("coders", data.coders != NULL, 1);
+	assert_equal("id do ultimo", data.coders[4].id, 5);
+	assert_equal("direita do ultimo", data.coders[4].right_dongle == &data.dongles[0], 1);
+	destroy_dongles(data.dongles, 5);
+	free(data.dongles);
+	free(data.coders);
+	destroy_shared(&data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 15:51:50 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/28 16:48:17 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ int		init_dongles(t_data *data);
 int		init_coders(t_data *data);
 int		init_data(t_data *data, char **argv);
 void	destroy_dongles(t_dongle *dongles, int count);
+void	destroy_shared(t_data *data);
+void	cleanup_all(t_data *data);
 
 #endif
