@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 11:41:51 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 15:28:46 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ struct s_data
 	pthread_t		monitor;
 	pthread_mutex_t	log_mutex;
 	pthread_mutex_t	stop_mutex;
+	pthread_mutex_t	state_mutex;
 	int				stop;
 	long			start_time;
 
