@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 15:47:27 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 18:24:23 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 19:05:10 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,14 @@ int	find_burned_out(t_data *data)
 		i++;
 	}
 	return (0);
+}
+
+int	is_stopped(t_data *data)
+{
+	int	stopped;
+
+	pthread_mutex_lock(&data->stop_mutex);
+	stopped = data->stop;
+	pthread_mutex_unlock(&data->stop_mutex);
+	return (stopped);
 }

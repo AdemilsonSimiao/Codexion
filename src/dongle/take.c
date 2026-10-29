@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:02:52 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 11:36:11 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 19:00:20 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	take_dongle(t_coder *coder, t_dongle *dongle)
 {
 	pthread_mutex_lock(&dongle->mutex);
-	while (dongle->dongle_data != 0
-		|| get_time_ms() < dongle->dongle_cooldown)
+	while (!is_stopped(coder->data)
+		&& (dongle->dongle_data != 0
+			|| get_time_ms() < dongle->dongle_cooldown))
 	{
 		pthread_mutex_unlock(&dongle->mutex);
 		usleep(200);

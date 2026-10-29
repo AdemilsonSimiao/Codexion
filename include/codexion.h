@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 18:44:58 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 18:56:47 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ int		is_burned_out(t_coder *coder);
 int		all_done(t_data *data);
 int		find_burned_out(t_data *data);
 void	*monitor_routine(void *arg);
+int		is_stopped(t_data *data);
 
 #endif
