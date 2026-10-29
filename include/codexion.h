@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 20:00:31 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 20:57:53 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ typedef struct s_dongle
 	pthread_cond_t	cond;
 	int				dongle_data;
 	long			dongle_cooldown;
+	t_heap			queue;
+	long			next_ticket;
 }	t_dongle;
 
 typedef struct s_data	t_data;
@@ -81,38 +83,41 @@ struct s_data
 
 };
 
-int		negative_validation(int validate);
-int		ft_isdigit(char c);
-int		number_validation(char *str);
-int		fifo_edf_validation(char *str);
-int		args_validation(int argc, char **argv);
-void	fill_config(t_config *config, char **argv);
-long	get_time_ms(void);
-void	smart_sleep(long ms);
-void	log_state(t_data *data, int id, const char *msg);
-int		init_dongles(t_data *data);
-int		init_coders(t_data *data);
-int		init_data(t_data *data, char **argv);
-void	destroy_dongles(t_dongle *dongles, int count);
-void	destroy_shared(t_data *data);
-void	cleanup_all(t_data *data);
-void	*coder_routine(void *arg);
-void	simulation(t_data *data);
-void	do_compile(t_coder *coder);
-void	do_debug(t_coder *coder);
-void	do_refactor(t_coder *coder);
-void	take_dongle(t_coder *coder, t_dongle *dongle);
-void	take_dongles(t_coder *coder);
-void	drop_dongle(t_coder *coder, t_dongle *dongle);
-void	drop_dongles(t_coder *coder);
-int		is_done(t_coder *coder);
-int		is_burned_out(t_coder *coder);
-int		all_done(t_data *data);
-int		find_burned_out(t_data *data);
-void	*monitor_routine(void *arg);
-int		is_stopped(t_data *data);
-int		heap_init(t_heap *heap, int capacity);
-void	heap_destroy(t_heap *heap);
-int		request_before(t_request *a, t_request *b);
+int			negative_validation(int validate);
+int			ft_isdigit(char c);
+int			number_validation(char *str);
+int			fifo_edf_validation(char *str);
+int			args_validation(int argc, char **argv);
+void		fill_config(t_config *config, char **argv);
+long		get_time_ms(void);
+void		smart_sleep(long ms);
+void		log_state(t_data *data, int id, const char *msg);
+int			init_dongles(t_data *data);
+int			init_coders(t_data *data);
+int			init_data(t_data *data, char **argv);
+void		destroy_dongles(t_dongle *dongles, int count);
+void		destroy_shared(t_data *data);
+void		cleanup_all(t_data *data);
+void		*coder_routine(void *arg);
+void		simulation(t_data *data);
+void		do_compile(t_coder *coder);
+void		do_debug(t_coder *coder);
+void		do_refactor(t_coder *coder);
+void		take_dongle(t_coder *coder, t_dongle *dongle);
+void		take_dongles(t_coder *coder);
+void		drop_dongle(t_coder *coder, t_dongle *dongle);
+void		drop_dongles(t_coder *coder);
+int			is_done(t_coder *coder);
+int			is_burned_out(t_coder *coder);
+int			all_done(t_data *data);
+int			find_burned_out(t_data *data);
+void		*monitor_routine(void *arg);
+int			is_stopped(t_data *data);
+int			heap_init(t_heap *heap, int capacity);
+void		heap_destroy(t_heap *heap);
+int			request_before(t_request *a, t_request *b);
+int			heap_push(t_heap *heap, t_request request);
+int			heap_pop(t_heap *heap, t_request *out);
+t_request	*heap_peek(t_heap *heap);
 
 #endif

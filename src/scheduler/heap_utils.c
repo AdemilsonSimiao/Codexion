@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 19:45:04 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 19:59:26 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 20:55:04 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,11 @@ void	heap_destroy(t_heap *heap)
 	heap->items = NULL;
 	heap->size = 0;
 	heap->capacity = 0;
+}
+
+t_request	*heap_peek(t_heap *heap)
+{
+	if (heap->size == 0)
+		return (NULL);
+	return (&heap->items[0]);
 }
