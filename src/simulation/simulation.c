@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 09:06:30 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 19:27:20 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 20:02:35 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	init_times(t_data *data)
 {
 	int	i;
-	
+
 	data->start_time = get_time_ms();
 	i = 0;
 	while (i < data->config.number_of_coders)

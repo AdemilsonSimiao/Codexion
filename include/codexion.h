@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 18:56:47 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 20:00:31 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,20 @@ typedef struct s_config
 	int		number_of_compiles_required;
 	int		dongle_cooldown;
 	char	*scheduler;
-
 }	t_config;
+
+typedef struct s_request
+{
+	int		coder_id;
+	long	key;
+}	t_request;
+
+typedef struct s_heap
+{
+	t_request	*items;
+	int			size;
+	int			capacity;
+}	t_heap;
 
 typedef struct s_dongle
 {
@@ -99,5 +111,8 @@ int		all_done(t_data *data);
 int		find_burned_out(t_data *data);
 void	*monitor_routine(void *arg);
 int		is_stopped(t_data *data);
+int		heap_init(t_heap *heap, int capacity);
+void	heap_destroy(t_heap *heap);
+int		request_before(t_request *a, t_request *b);
 
 #endif
