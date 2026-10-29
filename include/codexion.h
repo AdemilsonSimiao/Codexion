@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 08:52:44 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 11:41:51 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,14 @@ int		init_data(t_data *data, char **argv);
 void	destroy_dongles(t_dongle *dongles, int count);
 void	destroy_shared(t_data *data);
 void	cleanup_all(t_data *data);
+void	*coder_routine(void *arg);
+void	simulation(t_data *data);
+void	do_compile(t_coder *coder);
+void	do_debug(t_coder *coder);
+void	do_refactor(t_coder *coder);
+void	take_dongle(t_coder *coder, t_dongle *dongle);
+void	take_dongles(t_coder *coder);
+void	drop_dongle(t_coder *coder, t_dongle *dongle);
+void	drop_dongles(t_coder *coder);
 
 #endif
