@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 15:28:46 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 18:44:58 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ typedef struct s_dongle
 	long			dongle_cooldown;
 }	t_dongle;
 
-typedef struct s_data t_data;
-typedef struct s_coder t_coder;
+typedef struct s_data	t_data;
+typedef struct s_coder	t_coder;
 
 struct s_coder
 {
@@ -93,5 +93,10 @@ void	take_dongle(t_coder *coder, t_dongle *dongle);
 void	take_dongles(t_coder *coder);
 void	drop_dongle(t_coder *coder, t_dongle *dongle);
 void	drop_dongles(t_coder *coder);
+int		is_done(t_coder *coder);
+int		is_burned_out(t_coder *coder);
+int		all_done(t_data *data);
+int		find_burned_out(t_data *data);
+void	*monitor_routine(void *arg);
 
 #endif

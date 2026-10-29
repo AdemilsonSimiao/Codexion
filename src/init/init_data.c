@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 21:38:20 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 15:40:20 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 15:43:18 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	init_shared(t_data *data)
 		pthread_mutex_destroy(&data->log_mutex);
 		return (0);
 	}
-	
 	data->start_time = get_time_ms();
 	data->stop = 0;
 	return (1);

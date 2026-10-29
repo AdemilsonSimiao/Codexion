@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 08:43:29 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 20:29:49 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 15:43:49 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	
+
 	if (args_validation(argc, argv) == 0)
 	{
 		fprintf(stderr, "Invalid mode. "
