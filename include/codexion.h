@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 16:48:17 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 08:52:44 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ typedef struct s_dongle
 	long			dongle_cooldown;
 }	t_dongle;
 
-typedef struct s_coder
+typedef struct s_data t_data;
+typedef struct s_coder t_coder;
+
+struct s_coder
 {
 	int			id;
 	pthread_t	thread;
@@ -49,10 +52,10 @@ typedef struct s_coder
 	t_dongle	*left_dongle;
 	t_dongle	*right_dongle;
 	t_config	*config;
+	t_data		*data;
+};
 
-}	t_coder;
-
-typedef struct s_data
+struct s_data
 {
 	t_config		config;
 	t_dongle		*dongles;
@@ -63,7 +66,7 @@ typedef struct s_data
 	int				stop;
 	long			start_time;
 
-}	t_data;
+};
 
 int		negative_validation(int validate);
 int		ft_isdigit(char c);

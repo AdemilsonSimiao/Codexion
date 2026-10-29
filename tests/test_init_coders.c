@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 10:02:07 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/28 10:02:21 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/29 08:55:42 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(void)
 		assert_equal("left", data.coders[i].left_dongle == &data.dongles[i], 1);
 		assert_equal("right", data.coders[i].right_dongle == &data.dongles[(i + 1) % 3], 1);
 		assert_equal("config", data.coders[i].config == &data.config, 1);
+		assert_equal("data", data.coders[i].data == &data, 1);
 		pthread_mutex_destroy(&data.dongles[i].mutex);
 		pthread_cond_destroy(&data.dongles[i].cond);
 		i++;

@@ -3,7 +3,12 @@ CC = cc -Wall -Wextra -Werror -pthread
 SRCS =	src/main.c \
 		src/parsing/parse_args.c \
 		src/parsing/validation.c \
-		src/utils/utils.c
+		src/utils/utils.c \
+		src/utils/time.c \
+		src/init/init_data.c \
+		src/init/init_dongles.c \
+		src/init/init_coders.c \
+		src/cleanup.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
