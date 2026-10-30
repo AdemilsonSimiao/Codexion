@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/29 20:57:53 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/30 16:57:41 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void		do_compile(t_coder *coder);
 void		do_debug(t_coder *coder);
 void		do_refactor(t_coder *coder);
 void		take_dongle(t_coder *coder, t_dongle *dongle);
-void		take_dongles(t_coder *coder);
 void		drop_dongle(t_coder *coder, t_dongle *dongle);
 void		drop_dongles(t_coder *coder);
 int			is_done(t_coder *coder);
@@ -119,5 +118,15 @@ int			request_before(t_request *a, t_request *b);
 int			heap_push(t_heap *heap, t_request request);
 int			heap_pop(t_heap *heap, t_request *out);
 t_request	*heap_peek(t_heap *heap);
+int			take_dongles(t_coder *coder);
+long		deadline_of(t_coder *coder);
+void		request_dongle(t_coder *coder, t_dongle *dongle, long deadline);
+int			dongle_ready(t_dongle *dongle);
+int			blocked_by_neighbor(t_coder *coder, t_dongle *dongle);
+int			is_free(t_dongle *dongle);
+void		lock_pair(t_dongle *first, t_dongle *second);
+void		unlock_pair(t_dongle *first, t_dongle *second);
+int			try_take(t_coder *coder, t_dongle *first, t_dongle *second);
+void		heap_remove(t_heap *heap, int coder_id);
 
 #endif

@@ -14,6 +14,8 @@ SRCS =	src/main.c \
 		src/coder/actions.c \
 		src/dongle/drop.c \
 		src/dongle/take.c \
+		src/dongle/queue.c \
+		src/dongle/pair.c \
 		src/monitor/monitor_routine.c \
 		src/monitor/checks.c \
 		src/scheduler/compare.c \
