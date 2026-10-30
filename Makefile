@@ -16,6 +16,9 @@ SRCS =	src/main.c \
 		src/dongle/take.c \
 		src/monitor/monitor_routine.c \
 		src/monitor/checks.c \
+		src/scheduler/compare.c \
+		src/scheduler/heap_utils.c \
+		src/scheduler/heap.c \
 		src/cleanup.c
 OBJS = $(SRCS:.c=.o)
 
