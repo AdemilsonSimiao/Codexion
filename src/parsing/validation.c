@@ -6,18 +6,11 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 18:58:17 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/30 21:38:07 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/30 23:12:54 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "codexion.h"
-
-int	negative_validation(int validate)
-{
-	if (validate < 0)
-		return (-1);
-	return (0);
-}
 
 int	number_validation(char *str)
 {
