@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 18:58:17 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/26 22:02:53 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/30 21:38:07 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ int	args_validation(int argc, char **argv)
 			return (0);
 		i++;
 	}
+	if (limits_validation(argv) == 0)
+		return (0);
+	if (fifo_edf_validation(argv[8]) == 0)
+		return (0);
 	if (fifo_edf_validation(argv[8]) == 0)
 		return (0);
 	return (1);
