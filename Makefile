@@ -3,6 +3,7 @@ CC = cc -Wall -Wextra -Werror -pthread
 SRCS =	src/main.c \
 		src/parsing/parse_args.c \
 		src/parsing/validation.c \
+		src/parsing/limits.c \
 		src/utils/utils.c \
 		src/utils/time.c \
 		src/utils/logger.c \

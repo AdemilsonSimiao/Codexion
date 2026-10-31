@@ -6,7 +6,7 @@
 /*   By: pc2 <pc2@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:42:44 by pc2               #+#    #+#             */
-/*   Updated: 2026/10/30 16:57:41 by pc2              ###   ########.fr       */
+/*   Updated: 2026/10/30 21:34:14 by pc2              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,7 @@ void		lock_pair(t_dongle *first, t_dongle *second);
 void		unlock_pair(t_dongle *first, t_dongle *second);
 int			try_take(t_coder *coder, t_dongle *first, t_dongle *second);
 void		heap_remove(t_heap *heap, int coder_id);
+int			fits_int(char *str);
+int			limits_validation(char **argv);
 
 #endif
